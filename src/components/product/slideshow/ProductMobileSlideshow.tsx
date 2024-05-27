@@ -9,6 +9,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 import "./slideshow.css";
+import { ProductImage } from "../product-image/ProductImage";
 
 interface Props {
 	images: string[];
@@ -22,7 +23,7 @@ export const ProductMobileSlideshow = ({ images, title, className }: Props) => {
 			<Swiper
 				style={
 					{
-						width: "100vw",
+						width: "auto",
 						height: "500px",
 						"--swiper-pagination-color": "#60A5FA",
 					} as React.CSSProperties
@@ -36,10 +37,10 @@ export const ProductMobileSlideshow = ({ images, title, className }: Props) => {
 			>
 				{images.map((image) => (
 					<SwiperSlide key={image}>
-						<Image
+						<ProductImage
 							width={600}
 							height={500}
-							src={`/products/${image}`}
+							src={`${image}`}
 							alt={title}
 							className="object-fill"
 						/>
