@@ -24,11 +24,7 @@ export const PlaceOrder = () => {
 
 	useEffect(() => {
 		setLoaded(true);
-
-		if (itemsInCart === 0) {
-			redirect("/empty");
-		}
-	}, [itemsInCart]);
+	}, []);
 
 	const onPlaceOrder = async () => {
 		setIsPlacingOrder(true);
